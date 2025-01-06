@@ -22,22 +22,27 @@
         void setRawBits( int const raw );
         Fixed& operator=(const Fixed &fixed);
         Fixed& operator++();
-        Fixed& operator++(int);
-         Fixed& operator--(int);
+        Fixed operator++(int);
+         Fixed operator--(int);
         Fixed& operator--();
+    bool operator>( const Fixed &copy) const;
+    Fixed operator+( const Fixed &copy) const;
+    Fixed operator-( const Fixed &copy) const;
+Fixed operator*(const Fixed& copy) const;
+    Fixed operator/( const Fixed &copy) const;
+    bool operator<(const Fixed &copy)const ;
+    bool operator>=( const Fixed &copy) const;
+    bool  operator<=( const Fixed &copy) const;
+    bool operator==(const Fixed &copy) const;
+    bool operator!=(const Fixed &copy) const;
+static const Fixed &max(  const Fixed &obj1 , const Fixed &obj2) ;
+static const Fixed &min(  const Fixed &obj1 , const Fixed &obj2) ;
+
+
 
     };
 
     std::ostream& operator<<(std::ostream &os,const Fixed &fixed);
-    Fixed& operator>(const Fixed &a , const Fixed &b);
-    Fixed& operator+(const Fixed &a , const Fixed &b);
-    Fixed& operator-(const Fixed &a , const Fixed &b);
-    Fixed& operator*(const Fixed &a , const Fixed &b);
-    Fixed& operator/(const Fixed &a , const Fixed &b);
-    Fixed& operator<(const Fixed &a , const Fixed &b);
-    Fixed& operator>=(const Fixed &a , const Fixed &b);
-    Fixed& operator<=(const Fixed &a , const Fixed &b);
-    bool operator==(const Fixed &a , const Fixed &b);
-    bool operator!=(const Fixed &a , const Fixed &b);
+    
 
 #endif
